@@ -22,6 +22,7 @@ class App extends React.Component{
       }
     ]
   };
+ onClickDone = isDone => console.log(isDone);
   render(){
     return (
       <div className={styles.wrap}>
@@ -29,7 +30,7 @@ class App extends React.Component{
           <CardContent>
            <h1 className={styles.title}> Важные дела </h1>
            <InputItem />
-           <ItemList items={this.state.items} />
+           <ItemList items={this.state.items} onClickDone={this.onClickDone} />
            <Footer count={2} />
            </CardContent>
         </Card>
