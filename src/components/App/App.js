@@ -6,8 +6,8 @@ import styles from './App.module.css';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 class App extends React.Component{
-  render(){
-    const items =[
+  state={
+    items: [
       {
           value: 'Написать новое приложение',
           isDone:false
@@ -20,14 +20,16 @@ class App extends React.Component{
           value: 'Сделать все дела',
           isDone:true
       }
-    ];
+    ]
+  };
+  render(){
     return (
       <div className={styles.wrap}>
         <Card>
           <CardContent>
            <h1 className={styles.title}> Важные дела </h1>
            <InputItem />
-           <ItemList items={items} />
+           <ItemList items={this.state.items} />
            <Footer count={2} />
            </CardContent>
         </Card>
