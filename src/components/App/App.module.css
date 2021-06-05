@@ -1,0 +1,11 @@
+.wrap{
+  margin: auto;
+  width: 300px;
+}
+.title{
+  font-size-adjust: none;
+font-size-adjust: 0.7;
+font-size-adjust: inherit;
+font-size-adjust: initial;
+  text-align: center;
+}
