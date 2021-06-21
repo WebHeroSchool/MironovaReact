@@ -23,8 +23,8 @@ const Item = ({ value, isDone, onClickDone,onClickDelete, id }) => (<span classN
     />}
  />
   {value}
-  <IconButton aria-label="delete"  >
-       <DeleteIcon onClick={() => onClickDelete(id)} />
+  <IconButton aria-label="delete" onClick={() => onClickDelete(id)} >
+       <DeleteIcon  />
   </IconButton>
 </span>);
 export default Item;
