@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import classnames from 'classnames';
 import styles from './item.module.css';
-const Item = ({ value, isDone, onClickDone,id }) => (<span className={
+const Item = ({ value, isDone, onClickDone,onClickDelete, id }) => (<span className={
   classnames({
     [styles.item]:true,
     [styles.done]:isDone
@@ -19,6 +19,7 @@ const Item = ({ value, isDone, onClickDone,id }) => (<span className={
       checkedIcon={<Favorite />}
       name="checkedH"
       onClick={() => onClickDone(id)}
+      onDelete={()=>onClickDelete(id)}
       />}
  />
   {value}
