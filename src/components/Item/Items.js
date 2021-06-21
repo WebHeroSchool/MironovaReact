@@ -7,21 +7,24 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import classnames from 'classnames';
 import styles from './item.module.css';
+
 const Item = ({ value, isDone, onClickDone,onClickDelete, id }) => (<span className={
   classnames({
     [styles.item]:true,
-    [styles.done]:isDone
+    [styles.done]:isDone,
     })
 }>
-<FormControlLabel
-   control={<Checkbox
+  <FormControlLabel
+      control={<Checkbox
       icon={<FavoriteBorder />}
       checkedIcon={<Favorite />}
       name="checkedH"
       onClick={() => onClickDone(id)}
-      onDelete={()=>onClickDelete(id)}
-      />}
+    />}
  />
   {value}
+  <IconButton aria-label="delete"  >
+       <DeleteIcon onClick={() => onClickDelete(id)} />
+  </IconButton>
 </span>);
 export default Item;
