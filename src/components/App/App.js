@@ -24,7 +24,8 @@ class App extends React.Component{
           id:3
       }
     ],
-    count:3
+    count:3,
+    hasError:false
   };
   onClickDone = id => {
      const newItemList = this.state.items.map(item => {
@@ -40,19 +41,29 @@ onClickDelete=id=>{
 		const newItems = this.state.items.filter(item=> item.id !== id);
 		this.setState({items: newItems})
 };
-onClickAdd=value=>this.setState(state=>({
-  items:[
-    ...state.items,
-    {
-      value,
-      isDone:false,
-      id:state.count+1
+onClickAdd=value=>{
+if(value!==''){
+  this.setState(state=>({
+      items:[
+        ...state.items,
+        {
+          value,
+          isDone:false,
+          id:state.count+1
+        }
+      ],
+      count:state.count+1,
+      hasError:false
+    }));
+}
+else{
+
+      this.setState(state =>
+        ({
+          hasError: true
+        }));
     }
-  ],
-  count:state.count+1
-
-}));
-
+}
   render(){
     return (
       <div className={styles.wrap}>
@@ -61,12 +72,12 @@ onClickAdd=value=>this.setState(state=>({
            <h1 className={styles.title}> Важные дела </h1>
            <InputItem
               onClickAdd={this.onClickAdd}
+              hasError={this.state.hasError}
            />
            <ItemList items={this.state.items}
               onClickDone={this.onClickDone}
               onClickDelete={this.onClickDelete}
-
-             />
+           />
            <Footer count={this.state.count} />
            </CardContent>
         </Card>
