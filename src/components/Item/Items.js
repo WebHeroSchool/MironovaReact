@@ -5,6 +5,7 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import PropTypes from 'prop-types'
 import classnames from 'classnames';
 import styles from './item.module.css';
 
@@ -28,7 +29,9 @@ const Item = ({ value, isDone, onClickDone,onClickDelete, id }) => (<span classN
   </IconButton>
 </span>);
 
-Item.defaultProps = {
-	isDone: false
+Item.propTypes = {
+    value: PropTypes.string.isRequired,
+    isDone: PropTypes.bool.isRequired,
+    id: PropTypes.number.isRequired
 };
 export default Item;
