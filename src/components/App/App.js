@@ -57,7 +57,6 @@ if(value!==''){
     }));
 }
 else{
-
       this.setState(state =>
         ({
           hasError: true

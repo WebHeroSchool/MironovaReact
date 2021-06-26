@@ -8,27 +8,41 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import PropTypes from 'prop-types'
 import classnames from 'classnames';
 import styles from './item.module.css';
-
-const Item = ({ value, isDone, onClickDone,onClickDelete, id }) => (<span className={
-  classnames({
-    [styles.item]:true,
-    [styles.done]:isDone,
-    })
-}>
-  <FormControlLabel
-      control={<Checkbox
-      icon={<FavoriteBorder />}
-      checkedIcon={<Favorite />}
-      name="checkedH"
-      onClick={() => onClickDone(id)}
-    />}
- />
-  {value}
-  <IconButton aria-label="delete" onClick={() => onClickDelete(id)} >
-       <DeleteIcon  />
-  </IconButton>
-</span>);
-
+class Item extends React.Component{
+  componentDidMount(){
+    console.log('componentDidMount');
+  }
+  componentDidUpdate(){
+    console.log('componentDidUpdate');
+  }
+  componentWillUnmount(){
+    console.log('componentWillUnmount');
+  }
+  render(){
+    const { value, isDone, onClickDone,onClickDelete, id }=this.props;
+    return(
+      <span className={
+        classnames({
+          [styles.item]:true,
+          [styles.done]:isDone,
+          })
+      }>
+        <FormControlLabel
+            control={<Checkbox
+            icon={<FavoriteBorder />}
+            checkedIcon={<Favorite />}
+            name="checkedH"
+            onClick={() => onClickDone(id)}
+          />}
+       />
+        {value}
+        <IconButton aria-label="delete" onClick={() => onClickDelete(id)} >
+             <DeleteIcon  />
+        </IconButton>
+      </span>
+    )
+  }
+};
 Item.propTypes = {
     value: PropTypes.string.isRequired,
     isDone: PropTypes.bool.isRequired,

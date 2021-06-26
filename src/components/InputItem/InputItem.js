@@ -14,14 +14,13 @@ class InputItem extends React.Component{
   this.props.onClickAdd(this.state.inputValue);
   }
   render(){
-    const {onClickAdd}=this.props;
+    
     return(
       <Grid className={styles.inputItem}>
           <TextField
             label={ "Добавить новое дело" }
             id="filled-margin-dense"
             margin="dense"
-            fullwidth
             value={this.state.inputValue}
             onChange={event=>this.setState({inputValue:event.target.value.toUpperCase()})}
             helperText={ this.props.hasError ? "Поле не может быть пустым" : ""}
@@ -30,7 +29,6 @@ class InputItem extends React.Component{
            <Button
               variant="contained"
               color="primary"
-              fullwidth
               onClick={this.onButtonCLick}>
             Добавить
           </Button>
