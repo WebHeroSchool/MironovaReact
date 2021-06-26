@@ -27,4 +27,8 @@ const Item = ({ value, isDone, onClickDone,onClickDelete, id }) => (<span classN
        <DeleteIcon  />
   </IconButton>
 </span>);
+
+Item.defaultProps = {
+	isDone: false
+};
 export default Item;
