@@ -29,6 +29,6 @@ const Item = ({ value, isDone, onClickDone,onClickDelete, id }) => (<span classN
 </span>);
 
 Item.defaultProps = {
-	isDone: false
+    value: "Задача без имени"
 };
 export default Item;
