@@ -14,6 +14,7 @@ class Item extends React.Component{
   }
   componentWillUnmount(){
     clearInterval(this.timerID);
+    console.log('componentWillUnmount');
   }
   render(){
     const { value, isDone, onClickDone,onClickDelete, id }=this.props;
