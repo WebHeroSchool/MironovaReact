@@ -10,12 +10,10 @@ import classnames from 'classnames';
 import styles from './item.module.css';
 class Item extends React.Component{
   componentDidMount(){
-    console.log('componentDidMount');
-  }
-  componentDidUpdate(){
-    console.log('componentDidUpdate');
+    this.timerID = setInterval(() => console.log('interval'), 1000)
   }
   componentWillUnmount(){
+    clearInterval(this.timerID);
     console.log('componentWillUnmount');
   }
   render(){
