@@ -32,6 +32,8 @@ const Item = ({ value, isDone, onClickDone,onClickDelete, id }) => (<span classN
 Item.propTypes = {
     value: PropTypes.string.isRequired,
     isDone: PropTypes.bool.isRequired,
-    id: PropTypes.number.isRequired
+    id: PropTypes.number.isRequired,
+    onClickDone: PropTypes.func.isRequired,
+    onClickDelete: PropTypes.func.isRequired
 };
 export default Item;

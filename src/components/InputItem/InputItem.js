@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import FormHelperText from "@material-ui/core/FormHelperText";
 import styles from './inputItem.module.css';
+import PropTypes from 'prop-types';
 class InputItem extends React.Component{
   state={
     inputValue:''
@@ -38,4 +39,10 @@ class InputItem extends React.Component{
       </Grid>);
       }
   }
+  InputItem.propTypes = {
+    inputValue: PropTypes.string.isRequired,
+    isError: PropTypes.bool.isRequired,
+    onClickAdd: PropTypes.func.isRequired,
+    onButtonCLick: PropTypes.func.isRequired
+}
 export default InputItem
