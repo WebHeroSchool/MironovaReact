@@ -9,12 +9,12 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames';
 import styles from './item.module.css';
 class Item extends React.Component{
-  componentDidMount(){
-    this.timerID = setInterval(() => console.log('interval'), 1000)
-  }
-  componentWillUnmount(){
-    clearInterval(this.timerID);
-  }
+  // componentDidMount(){
+  //   this.timerID = setInterval(() => console.log('interval'), 1000)
+  // }
+  // componentWillUnmount(){
+  //   clearInterval(this.timerID);
+  // }
   render(){
     const { value, isDone, onClickDone,onClickDelete, id }=this.props;
     return(
@@ -44,5 +44,6 @@ Item.propTypes = {
     value: PropTypes.string.isRequired,
     isDone: PropTypes.bool.isRequired,
     id: PropTypes.number.isRequired
+
 };
 export default Item;
