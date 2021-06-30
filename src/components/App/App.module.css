@@ -1,6 +1,7 @@
 .wrap{
   margin: auto;
-  width: 400px;
+  width: 600px;
+  display: flex;
 }
 .title{
   font-size-adjust: none;
@@ -8,4 +9,12 @@ font-size-adjust: 0.7;
 font-size-adjust: inherit;
 font-size-adjust: initial;
   text-align: center;
+}
+.sidebar{
+  grid-area: sidebar;
+  margin-right: 15px;
+}
+.link{
+  text-decoration: none;
+  color: black;
 }
