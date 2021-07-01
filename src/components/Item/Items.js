@@ -9,12 +9,7 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames';
 import styles from './item.module.css';
 class Item extends React.Component{
-  // componentDidMount(){
-  //   this.timerID = setInterval(() => console.log('interval'), 1000)
-  // }
-  // componentWillUnmount(){
-  //   clearInterval(this.timerID);
-  // }
+
   render(){
     const { value, isDone, onClickDone,onClickDelete, id }=this.props;
     return(
