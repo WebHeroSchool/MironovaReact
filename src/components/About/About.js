@@ -14,8 +14,6 @@ class About extends React.Component{
   }
   componentDidMount(){
     const user = 'MironovaAlina';
-    const url = 'https://api.github.com/users/'+ user;
-
     octokit.repos.listForUser({
       username: user
     }).then(({data}) => {
